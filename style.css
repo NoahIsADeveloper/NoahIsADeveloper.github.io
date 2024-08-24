@@ -159,7 +159,7 @@ header .subtitle {
     color: #2391AF;
 }
 
-.links-container img {
+img  {
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -176,5 +176,9 @@ a:hover {
 }
 
 .links-container:hover a {
+    text-shadow: 0 0 30px rgba(19, 155, 189, 0.3);
+}
+
+.contact-container:hover a {
     text-shadow: 0 0 30px rgba(19, 155, 189, 0.3);
 }
