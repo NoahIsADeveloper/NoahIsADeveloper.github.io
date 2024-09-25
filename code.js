@@ -6,7 +6,7 @@ const LINKS = {
 		["https://www.youtube.com/@NoahIsADeveloper", "youtube.png", "YouTube Channel"],
 	],
 	groupLinks : [
-		["https://discord.gg/thaN3v5EwJ", "discord.png", "Discord Server"],
+		["https://discord.gg/5qdzBtBgjx", "discord.png", "Discord Server"],
 		["https://www.roblox.com/groups/33682217/Questionable-activities#!/about", "roblox.png", "Roblox Group"]
 	],
 	projectLinks : [
