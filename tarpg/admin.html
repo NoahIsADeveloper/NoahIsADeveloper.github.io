@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>TARPG Admin Docs</title>
+	
+		<link rel="stylesheet" href="styles.css">
+		<link rel="icon" type="image/x-icon" href="assets/web_icons/icon.ico">
+	
+		<meta charset="UTF-8">
+		<meta name="keywords" content="noah, development, coding, links, tarpg, the battle bricks, totally accurate roleplay game">
+		<meta name="theme-color" content="#2391AF">
+	
+		<meta property="og:site_name" content="NoahIsADeveloper">
+		<meta property="og:title" content="TARPG Admin Docs">
+		<meta property="og:description" content="List of all TARPG admin commands and how they work!">
+	
+		<meta property="og:image" content="https://noahisa.dev/assets/web_icons/embed.png">
+		<meta property="og:image:width" content="100">
+		<meta property="og:image:height" content="100">
+	</head>
+	<body>
+		<header>
+			<h1>TARPG Admin Docs</h1>
+			<p>List of all TARPG admin commands and how they work!</p>
+		</header>
+
+		<div class="main-content">
+			<h2>Admin Commands</h2>
+			<h3>All admin commands are prefixed with a '-'.<br>You can use multiple commands in one message with ';' as a seperator.<br>Player values use display names automatically, add '@'' at the start for usernames.</h3>
+			
+			<div class="command">
+				<h3>load</h3>
+				<p><strong>Description:</strong> Instantly respawns the player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim?</code> (player): The player you wish to reload.</li>
+				</ul>
+			</div>
+	
+			<div class="command">
+				<h3>respawn</h3>
+				<p><strong>Description:</strong> Instantly respawns a player at their current location.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim?</code> (player): The player you wish to respawn.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>offset</h3>
+				<p><strong>Description:</strong> idk what to describe this. root.CFrame *= CFrame.new(arg1, arg2, arg3). so [0 0 -5] would be forwards 5 studs.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being offset.</li>
+					<li><code>x</code> (number): The CFrame X value.</li>
+					<li><code>y?</code> (number): The CFrame Y value.</li>
+					<li><code>z?</code> (number): The CFrame Z value.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>tumore</h3>
+				<p><strong>Description:</strong> Toggles the "tumored" value for the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim?</code> (player): The player you wish to toggle tumore on.</li>
+					<li><code>value?</code> (boolean): Wether tumore should be true/false. (v3 exclusive, toggles if not specified)</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>bring</h3>
+				<p><strong>Description:</strong> Brings the victim player 5 studs in front of the target player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being teleported.</li>
+					<li><code>target</code> (player): The player being teleported to.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>angular_velocity</h3>
+				<p><strong>Description:</strong> Sets the angular (rotational) velocity of the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being rotational velocity-ed.</li>
+					<li><code>x</code> (number): The rotational X velocity.</li>
+					<li><code>y?</code> (number): The rotational Y velocity.</li>
+					<li><code>z?</code> (number): The rotational Z velocity.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>velocity</h3>
+				<p><strong>Description:</strong> Sets the velocity of the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being velocity-ed.</li>
+					<li><code>x</code> (number): The X velocity.</li>
+					<li><code>y?</code> (number): The Y velocity.</li>
+					<li><code>z?</code> (number): The Z velocity.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>morph</h3>
+				<p><strong>Description:</strong> Morphs the specified player to the specified battler.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being morphed.</li>
+					<li><code>morph</code> (string): The full name of the morph (e.g. BlueTelamonBattler).</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>scale</h3>
+				<p><strong>Description:</strong> Sets the model scale of the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being scaled.</li>
+					<li><code>scale</code> (number): The scale.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>tool</h3>
+				<p><strong>Description:</strong> Gives the player a tool from a set list.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being given the tools.</li>
+					<li><code>tool</code> (string): The name of the tool ('all' is an option).</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>jump</h3>
+				<p><strong>Description:</strong> Sets the jump power of the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being jumppower-ed</li>
+					<li><code>jumppower</code> (number): The jumppower.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>speed</h3>
+				<p><strong>Description:</strong> Sets the walk speed of the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being walkspeed-ed</li>
+					<li><code>walkspeed</code> (number): The walkspeed.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>admin</h3>
+				<p><strong>Description:</strong> Gives the specified player admin.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being granted admin.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>unadmin</h3>
+				<p><strong>Description:</strong> Revokes admin from the specified player.</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>victim</code> (player): The player being un-granted admin.</li>
+				</ul>
+			</div>
+
+			<div class="command">
+				<h3>delay</h3>
+				<p><strong>Description:</strong> Waits <code>time</code> seconds before continuing command chain. (e.g. <code>-admin Noah;-delay 30;-unadmin Noah</code> to grant admin for only 30 seconds)</p>
+				<p><strong>Parameters:</strong></p>
+				<ul>
+					<li><code>time</code> (number): The seconds it will wait.</li>
+				</ul>
+			</div>
+		</div>
+</html>
