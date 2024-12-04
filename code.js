@@ -7,7 +7,7 @@ const LINKS = {
 	],
 	groupLinks : [
 		["https://discord.gg/5qdzBtBgjx", "discord.png", "Discord Server"],
-		["https://www.roblox.com/groups/33682217/Questionable-activities#!/about", "roblox.png", "Roblox Group"]
+		["https://www.roblox.com/communities/34672685/NoahDev#!/about", "roblox.png", "Roblox Group"]
 	],
 	projectLinks : [
 		
