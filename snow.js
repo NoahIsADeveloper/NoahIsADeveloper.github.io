@@ -18,7 +18,7 @@ class Particle {
 		this.height = Math.random() * 10;
 		this.width = this.height//Math.random() * 30
 		this.speed = Math.random() * 0.1 + (canvas.width / 10000);
-		this.angle = Math.random() * 10 + 10;
+		this.angle = Math.random() * 30 + 10;
 		this.opacity = Math.random() * 0.8;
 	}
 
