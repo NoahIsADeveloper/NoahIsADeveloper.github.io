@@ -1,15 +1,15 @@
 body {
     margin: 0;
-    overflow-y: auto; /* Allow vertical scrolling */
-    background: rgb(0, 24, 68);
+    overflow-y: auto;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 50, 100, 0.8), rgba(0, 10, 40, 1)),  linear-gradient(to bottom, rgba(0, 24, 68, 1), rgba(0, 0, 20, 1));  
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
 }
 
 html {
-    height: 100%; /* Ensure the html element takes full height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%;
+    overflow-x: hidden;
 }
 
 canvas {
@@ -23,7 +23,7 @@ canvas {
     position: relative;
     z-index: 1;
     padding: 20px;
-    padding-bottom: 30px; /* Add some space for footer or contact */
+    padding-bottom: 30px;
 }
 
 .header {
@@ -36,7 +36,7 @@ canvas {
 }
 
 header, .sections, .contact {
-    padding-bottom: 30px; /* Add more bottom space if needed */
+    padding-bottom: 30px;
 }
 
 h1 {
@@ -186,4 +186,23 @@ h2 {
         font-size: 1rem;
         padding: 12px;
     }
+}
+
+@keyframes startupAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: startupAnimation 0.8s ease-out;
+}
+
+.container, .header, .sections, .contact {
+    opacity: 0;
+    animation: startupAnimation 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
