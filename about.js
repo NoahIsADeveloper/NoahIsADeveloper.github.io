@@ -26,8 +26,13 @@ function linksToHTML(links, imagePath) {
     return newHTML;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#projects").innerHTML = "<h2>Projects</h2>" + linksToHTML(LINKS.projectLinks, "assets/link_icons/");
+document.addEventListener("DOMContentLoaded", function () {
+	document.querySelector("#projects").innerHTML = "<h2>Projects</h2>" + linksToHTML(LINKS.projectLinks, "assets/link_icons/");
     document.querySelector("#socials").innerHTML = "<h2>Socials</h2>" + linksToHTML(LINKS.socialLinks, "assets/link_icons/");
     document.querySelector("#groups").innerHTML = "<h2>Groups</h2>" + linksToHTML(LINKS.groupLinks, "assets/link_icons/");
+	
+    let script = document.createElement("script");
+    script.src = "snow.js";
+    script.defer = true;
+    document.body.appendChild(script);
 });
