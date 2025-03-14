@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Noah's Links</title>
+    <title>Noah's Links</title>
 
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" type="image/x-icon" href="assets/web_icons/icon.ico">
 
 	<meta charset="UTF-8">
+
 	<meta name="keywords" content="noah, development, coding, links">
 	<meta name="theme-color" content="#2391AF">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta property="og:site_name" content="NoahIsADeveloper">
 	<meta property="og:title" content="Noah's Socials">
@@ -17,46 +19,30 @@
 	<meta property="og:image" content="https://noahisa.dev/assets/web_icons/embed.png">
 	<meta property="og:image:width" content="100">
 	<meta property="og:image:height" content="100">
-
-	<script src="code.js" defer></script>
 </head>
 <body>
-	<header>
-		<img src="assets/top.png" alt="Header Image" class="header-image">
-		<h1 id="title">Noah's Socials</h1>
-		<p class="subtitle">All my projects, groups, and socials. Maybe more in the future!</p>
-	</header>
-		<div class="social-container">
-			<div class="links-container" id="socials">
-			
-			</div>
-	
-			<div class="links-container" id="groups">
-				
-			</div>
-	
-			<div class="links-container" id="projects">
-				
-			</div>
-		</div>
-		
-		<img src="assets/bottom.png" alt="Bottom Image" class="bottom-image">
+    <canvas id="backgroundCanvas"></canvas>
 
-		<div class="social-container">
-			<div class="contact-container" id="phone">
-				<img src="assets/link_icons/phone.png"/>
-				+61 400 000 000
-			</div>
-	
-			<div class="contact-container" id="email">
-				<img src="assets/link_icons/email.png"/>
-				noahisadeveloper@gmail.com
-			</div>
-	
-			<div class="contact-container" id="twitter">
-				<img src="assets/link_icons/twitter.png"/>
-				<a href="https://x.com/NoahIsADev" target="_blank">@NoahIsADev</a>
-			</div>
-		</div>
+    <div class="container">
+        <div class="header">
+            <h1>Noah's Socials</h1>
+            <p>All my projects, groups, and socials. Maybe more in the future!</p>
+        </div>
+
+        <div class="sections">
+            <section id="socials" class="card"></section>
+            <section id="groups" class="card"></section>
+            <section id="projects" class="card"></section>
+        </div>
+
+        <div class="contact">
+            <div class="contact-box">
+                ✉️ noahisadeveloper@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <script src="snow.js"></script>
+    <script src="about.js"></script>
 </body>
 </html>
