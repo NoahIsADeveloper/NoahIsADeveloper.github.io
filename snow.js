@@ -63,9 +63,17 @@ class Particle {
 }
 
 // Update the size of the canvas
-function updateCanvasSize() {
+async function updateCanvasSize() {
+	// Cancer to make scrolling work
     canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	await new Promise(r => setTimeout(r, 50));
 	canvas.height = document.documentElement.scrollHeight;
+
+	// Remove useless particles when the window shrinks
+	// or add more particles when the window grow
+	createParticles();
 }
 
 // Used to create the particles (amount scales based on screen size)
@@ -112,8 +120,4 @@ animate();
 // Resize the canvas object
 window.addEventListener("resize", () => {
 	updateCanvasSize();
-
-	// Remove useless particles when the window shrinks
-	// or add more particles when the window grow
-	createParticles();
 });
