@@ -1,9 +1,6 @@
 const canvas = document.getElementById("backgroundCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = document.documentElement.scrollHeight;
-
 let particles = [];
 
 class Particle {
@@ -65,6 +62,12 @@ class Particle {
 	}
 }
 
+// Update the size of the canvas
+function updateCanvasSize() {
+    canvas.width = window.innerWidth;
+	canvas.height = document.documentElement.scrollHeight;
+}
+
 // Used to create the particles (amount scales based on screen size)
 function createParticles() {
 	const targetParticles = Math.floor((canvas.width * canvas.height) / 3000);
@@ -97,6 +100,9 @@ function animate() {
 	requestAnimationFrame(animate);
 }
 
+// Updates the size of the canvas
+updateCanvasSize();
+
 // Creates the particles
 createParticles();
 
@@ -105,8 +111,7 @@ animate();
 
 // Resize the canvas object
 window.addEventListener("resize", () => {
-	canvas.width = window.innerWidth;
-	canvas.height = document.documentElement.scrollHeight;
+	updateCanvasSize();
 
 	// Remove useless particles when the window shrinks
 	// or add more particles when the window grow
