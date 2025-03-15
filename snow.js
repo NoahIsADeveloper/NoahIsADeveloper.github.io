@@ -27,12 +27,12 @@ class Particle {
 
 	// Used to update the position of the particle every frame
 	update() {
-		// Scales movement speed based on screen height
-		let speedMultiplier = (canvas.width / 2000)
+		// Adds movement speed based on screen height for bigger screens
+		let speedMultiplier = (canvas.width / 10000)
 
 		// Move in the direction the particle is pointing in
-		this.x += Math.cos((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
-		this.y += Math.sin((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
+		this.x += Math.cos((this.angle * Math.PI) / 180) * (this.speed + speedMultiplier);
+		this.y += Math.sin((this.angle * Math.PI) / 180) * (this.speed + speedMultiplier);
 
 		// Reset the particle if it goes too far to the right or too far down
 		if (this.isOffscreen()) {
@@ -72,6 +72,13 @@ function createParticles() {
 	while (particles.length > targetParticles) {
 		particles.pop();
 	}
+
+	// Respawn offscreen particles after resize
+	particles.forEach((particle) => {
+		if (particle.isOffscreen()) {
+			particle.spawn()
+		}
+	});
 
 	while (particles.length < targetParticles) {
 		particles.push(new Particle());
