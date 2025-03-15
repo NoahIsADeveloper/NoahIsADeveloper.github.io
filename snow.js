@@ -8,29 +8,35 @@ class Particle {
 	constructor() {
 		this.reset();
 		
-		this.x = Math.random() * canvas.width
-		this.y = (Math.random() - 0.5) * canvas.height * 2
+		// Teleport them to a random location after it first loads
+		this.spawn();
 	}
 
+	// Runs after it goes offscreen
 	reset() {
 		this.x = Math.random() * -30;
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
 		this.height = Math.random() * 10;
-		this.width = this.height//Math.random() * 30
-		this.speed = Math.random() * 0.1 + (canvas.width / 10000);
+		this.width = this.height;
+		this.speed = Math.random() * 0.1;
 		this.angle = Math.random() * 30 + 10;
 		this.opacity = Math.random() * 0.8;
 	}
 
+	// Update the position every frame
 	update() {
-		this.x += Math.cos((this.angle * Math.PI) / 180) * this.speed;
-		this.y += Math.sin((this.angle * Math.PI) / 180) * this.speed;
+		let speedMultiplier = (canvas.width / 2000)
 
-		if (this.x > canvas.width + this.width || this.y > canvas.height + this.height) {
+		this.x += Math.cos((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
+		this.y += Math.sin((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
+
+		// Reset after going offscreen through the bottom/far right
+		if (this.isOffscreen()) {
 			this.reset();
 		}
 	}
 
+	// Draws the particle
 	draw() {
 		ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
 		ctx.lineWidth = this.width;
@@ -42,13 +48,40 @@ class Particle {
 		);
 		ctx.stroke();
 	}
+
+	// Teleport to a random location
+	spawn() {
+		this.x = Math.random() * canvas.width;
+		this.y = (Math.random() - 0.5) * canvas.height * 2;
+	}
+
+	// Offscreen check
+	isOffscreen() {
+		return (this.x > canvas.width + this.width || this.y > canvas.height + this.height);
+	}
 }
 
+// Creates the particles (scales based on screen size)
 let particles = [];
-for (let i = 0; i < (canvas.width * canvas.height / 3000); i++) {
-	particles.push(new Particle());
+function createParticles() {
+	const targetParticles = Math.floor((canvas.width * canvas.height) / 3000);
+
+	while (particles.length > targetParticles) {
+		particles.pop();
+	}
+
+	while (particles.length < targetParticles) {
+		particles.push(new Particle());
+	}
+
+	particles.forEach((particle) => {
+		if (particle.isOffscreen()) {
+
+		}
+	});
 }
 
+// Loop to draw and update the particles
 function animate() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -60,9 +93,18 @@ function animate() {
 	requestAnimationFrame(animate);
 }
 
+// Creates the particles
+createParticles();
+
+// Run the loop
 animate();
 
+// Resize the canvas object
 window.addEventListener("resize", () => {
 	canvas.width = window.innerWidth;
 	canvas.height = document.documentElement.scrollHeight;
+
+	// Remove useless particles when the window shrinks
+	// and add more particles when the window grow
+	createParticles();
 });
