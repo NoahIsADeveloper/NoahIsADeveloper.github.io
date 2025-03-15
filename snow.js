@@ -27,8 +27,10 @@ class Particle {
 
 	// Used to update the position of the particle every frame
 	update() {
+		// Scales movement speed based on screen height
 		let speedMultiplier = (canvas.width / 2000)
 
+		// Move in the direction the particle is pointing in
 		this.x += Math.cos((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
 		this.y += Math.sin((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
 
