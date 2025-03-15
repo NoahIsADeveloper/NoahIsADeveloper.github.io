@@ -20,7 +20,7 @@ class Particle {
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
 		this.height = Math.random() * 10;
 		this.width = this.height;
-		this.speed = Math.random() * 0.1;
+		this.speed = Math.random() * 0.05;
 		this.angle = Math.random() * 30 + 10;
 		this.opacity = Math.random() * 0.8;
 	}
@@ -28,7 +28,7 @@ class Particle {
 	// Used to update the position of the particle every frame
 	update() {
 		// Adds movement speed based on screen height for bigger screens
-		let speedMultiplier = (canvas.width / 10000)
+		let speedMultiplier = (canvas.width / 25000)
 
 		// Move in the direction the particle is pointing in
 		this.x += Math.cos((this.angle * Math.PI) / 180) * (this.speed + speedMultiplier);
