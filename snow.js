@@ -73,12 +73,6 @@ function createParticles() {
 	while (particles.length < targetParticles) {
 		particles.push(new Particle());
 	}
-
-	particles.forEach((particle) => {
-		if (particle.isOffscreen()) {
-
-		}
-	});
 }
 
 // Loop to draw and update the particles
