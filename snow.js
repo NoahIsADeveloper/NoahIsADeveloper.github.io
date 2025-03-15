@@ -76,7 +76,7 @@ function createParticles() {
 	// Respawn offscreen particles after resize
 	particles.forEach((particle) => {
 		if (particle.isOffscreen()) {
-			particle.spawn()
+			particle.spawn();
 		}
 	});
 
