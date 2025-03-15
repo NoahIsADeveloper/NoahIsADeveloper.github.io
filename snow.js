@@ -4,15 +4,17 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = document.documentElement.scrollHeight;
 
+let particles = [];
+
 class Particle {
 	constructor() {
 		this.reset();
 		
-		// Teleport them to a random location after it first loads
+		// Teleport it to a random location after it first loads
 		this.spawn();
 	}
 
-	// Runs after it goes offscreen
+	// Used to reset the particle after it goes offscreen
 	reset() {
 		this.x = Math.random() * -30;
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
@@ -23,20 +25,20 @@ class Particle {
 		this.opacity = Math.random() * 0.8;
 	}
 
-	// Update the position every frame
+	// Used to update the position of the particle every frame
 	update() {
 		let speedMultiplier = (canvas.width / 2000)
 
 		this.x += Math.cos((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
 		this.y += Math.sin((this.angle * Math.PI) / 180) * this.speed * speedMultiplier;
 
-		// Reset after going offscreen through the bottom/far right
+		// Reset the particle if it goes too far to the right or too far down
 		if (this.isOffscreen()) {
 			this.reset();
 		}
 	}
 
-	// Draws the particle
+	// Used to render/draw the particle every frame
 	draw() {
 		ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
 		ctx.lineWidth = this.width;
@@ -49,20 +51,19 @@ class Particle {
 		ctx.stroke();
 	}
 
-	// Teleport to a random location
+	// Used to teleport the particle to a random location
 	spawn() {
 		this.x = Math.random() * canvas.width;
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
 	}
 
-	// Offscreen check
+	// Used to check if the particle is offscreen
 	isOffscreen() {
 		return (this.x > canvas.width + this.width || this.y > canvas.height + this.height);
 	}
 }
 
-// Creates the particles (scales based on screen size)
-let particles = [];
+// Used to create the particles (amount scales based on screen size)
 function createParticles() {
 	const targetParticles = Math.floor((canvas.width * canvas.height) / 3000);
 
@@ -90,7 +91,7 @@ function animate() {
 // Creates the particles
 createParticles();
 
-// Run the loop
+// Start the loop
 animate();
 
 // Resize the canvas object
@@ -99,6 +100,6 @@ window.addEventListener("resize", () => {
 	canvas.height = document.documentElement.scrollHeight;
 
 	// Remove useless particles when the window shrinks
-	// and add more particles when the window grow
+	// or add more particles when the window grow
 	createParticles();
 });
