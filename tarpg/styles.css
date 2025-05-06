@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #2391AF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+h2 {
+    color: #36a6c5;
+}
+
+h1 {
+	color: #fff
+}
+
+h3 {
+	color: #2391AF;
+    margin-top: 20px;
+}
+
+.command {
+    background: #333;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.command h3 {
+    margin: 0 0 10px;
+}
+
+.command p {
+	color: #fff;
+    margin: 10px 0;
+}
+
+.command ul {
+    margin: 0;
+    padding: 0 20px;
+}
+
+.command ul li {
+	color: #fff;
+    margin: 5px 0;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    background: #222;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
