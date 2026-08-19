@@ -5,13 +5,17 @@
 
 	<script src="load-snow.js" defer></script>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" type="image/x-icon" href="assets/web_icons/icon.ico">
 
 	<!--  Tags -->
 	<meta charset="UTF-8">
-	<meta name="keywords" content="noah, noahisadev, noah is a dev, developer, game dev, programming, coding, software, web dev, social links, roblox developer, tech, github, groups, projects, indie dev, contact, social media, links, personal site, javascript, html, css">
-	<meta name="theme-color" content="#2391AF">
+	<meta name="keywords" content="noah, noahisadev, noah is a dev, developer, game dev, programming, coding, software, web dev, social links, roblox developer, tech, github, groups, projects, indie dev, cybersecurity, hacking, contact, social media, links, personal site, javascript, html, css">
+	<meta name="theme-color" content="#6FE3FF">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="twitter:image" content="https://noahisa.dev/assets/web_icons/embed.png">
 	<meta property="og:image" content="https://noahisa.dev/assets/web_icons/embed.png">
@@ -22,13 +26,13 @@
 	<meta property="og:type" content="website"/>
 	<link rel="canonical" href="https://noahisa.dev/">
 	<meta name="twitter:title" content="Noah's Soicals">
-	<meta name="twitter:description" content="I’m Noah, a game developer sharing my projects, groups, and social links.">
+	<meta name="twitter:description" content="I'm NoahIsADeveloper, a game developer sharing my projects, groups, and social links.">
 	<meta property="og:site_name" content="NoahIsADeveloper">
 	<meta property="og:title" content="Noah's Socials">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:url" content="https://noahisa.dev/">
-	<meta name="description" content="I’m NoahIsADeveloper, a game developer sharing my projects, groups, and social links.">
-	<meta property="og:description" content="I’m Noah, a game developer sharing my projects, groups, and social links.">
+	<meta name="description" content="I'm NoahIsADeveloper, a game developer sharing my projects, groups, and social links.">
+	<meta property="og:description" content="I'm Noah, a game developer sharing my projects, groups, and social links.">
 	<meta property="og:image:width" content="100">
 	<meta property="og:image:height" content="100">
 	<script type="application/ld+json">
@@ -43,49 +47,205 @@
 			"https://www.youtube.com/@NoahIsADeveloper"
 		  ],
 		  "jobTitle": "Game Developer",
-		  "description": "I’m Noah, a game developer sharing my projects, groups, and social links.",
-		  "email": "contactme@noahisa.dev"
+		  "description": "I'm Noah, a game developer sharing my projects, groups, and social links.",
+		  "email": "noahisadev@proton.me"
 		}
 	</script>
 </head>
 <body>
     <canvas id="backgroundCanvas"></canvas>
 
-	<div class="container">
-		<div class="header">
-			<h1>Noah's Socials</h1>
-			<p>All my projects, groups, and socials. Maybe more in the future!</p>
-		</div>
+	<div class="hero">
+		<div class="hero-bg" id="heroBg"></div>
+		<img class="hero-bg-img" src="assets/web_icons/background.png" alt=""
+			onload="document.getElementById('heroBg').classList.add('has-image')"
+			onerror="this.remove()">
+		<div class="hero-scrim"></div>
 
-		<div class="sections">
-			<section id="socials" class="card"><h2>Socials</h2><div class="links"><a href="https://github.com/NoahIsADeveloper" target="_blank">
-                        <img src="assets/link_icons/github.png" alt="Github Profile">
-                        <div class="link">Github Profile</div>
-                    </a><a href="https://www.roblox.com/users/703202541/profile" target="_blank">
-                        <img src="assets/link_icons/roblox.png" alt="Roblox Profile">
-                        <div class="link">Roblox Profile</div>
-                    </a><a href="https://steamcommunity.com/id/NoahIsADeveloper/" target="_blank">
-                        <img src="assets/link_icons/steam.png" alt="Steam Profile">
-                        <div class="link">Steam Profile</div>
-                    </a><a href="https://www.youtube.com/@NoahIsADeveloper" target="_blank">
-                        <img src="assets/link_icons/youtube.png" alt="YouTube Channel">
-                        <div class="link">YouTube Channel</div>
-                    </a></div></section>
-			<section id="groups" class="card"><h2>Groups</h2><div class="links"><a href="https://discord.gg/5qdzBtBgjx" target="_blank">
-                        <img src="assets/link_icons/discord.png" alt="Discord Server">
-                        <div class="link">Discord Server</div>
-                    </a><a href="https://www.roblox.com/communities/34672685/NoahDev#!/about" target="_blank">
-                        <img src="assets/link_icons/roblox.png" alt="Roblox Group">
-                        <div class="link">Roblox Group</div>
-                    </a></div></section>
-			<section id="projects" class="card"><h2>Projects</h2><p>No links available.</p></section>
+		<div class="hero-content">
+			<div class="avatar-frame">
+				<img src="assets/web_icons/embed.png" alt="My avatar" class="avatar"
+					onerror="this.parentElement.classList.add('avatar-fallback'); this.remove()">
+			</div>
+			<p class="eyebrow">ROBLOX &middot; GAME DEV</p>
+			<h1>Noah</h1>
+			<p class="tagline">Australian programmer/developer.</p>
+		</div>
+	</div>
+
+	<!-- <nav class="subnav" aria-label="Page sections">
+		<div class="subnav-inner">
+			<a href="#about">/about</a>
+			<a href="#socials">/socials</a>
+			<a href="#groups">/groups</a>
+			<a href="#mirrors">/mirrors</a>
+			<a href="#crypto">/crypto</a>
+			<a href="#keys">/keys</a>
+			<a href="#projects">/projects</a>
+		</div>
+	</nav> -->
+
+	<main class="container">
+		<div class="bento">
+			<section class="card" id="about">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">ABOUT</p>
+				<h2>Who I am</h2>
+				<p class="body-text">
+					I'm Noah. I used to mainly be a ROBLOX developer, but I have since started expanding into more programming-related stuff.
+					I used to work on a game with my friend that had 164 peak ccu and neared two million visits called "TBB:TARPG" on ROBLOX.
+					I the coding languages I know are LuaU, Lua, Go, Python and hopefully more to come.
+				</p>
+			</section>
+
+			<section class="card" id="socials">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">SOCIALS</p>
+				<h2>Find me</h2>
+				<div class="links">
+					<a href="https://github.com/NoahIsADeveloper" target="_blank">
+						<img src="assets/link_icons/github.png" alt="Github Profile">
+						<div class="link">Github Profile</div>
+					</a>
+					<a href="https://www.roblox.com/users/703202541/profile" target="_blank">
+						<img src="assets/link_icons/roblox.png" alt="Roblox Profile">
+						<div class="link">Roblox Profile</div>
+					</a>
+					<a href="https://steamcommunity.com/id/NoahIsADeveloper/" target="_blank">
+						<img src="assets/link_icons/steam.png" alt="Steam Profile">
+						<div class="link">Steam Profile</div>
+					</a>
+					<a href="https://www.youtube.com/@NoahIsADeveloper" target="_blank">
+						<img src="assets/link_icons/youtube.png" alt="YouTube Channel">
+						<div class="link">YouTube Channel</div>
+					</a>
+				</div>
+			</section>
+
+			<section class="card" id="groups">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">GROUPS</p>
+				<h2>Join in</h2>
+				<div class="links">
+					<!-- <a href="https://discord.gg/5qdzBtBgjx" target="_blank">
+						<img src="assets/link_icons/discord.png" alt="Discord Server">
+						<div class="link">Discord Server</div>
+					</a> -->
+					<a href="https://www.roblox.com/communities/34672685/NoahDev#!/about" target="_blank">
+						<img src="assets/link_icons/roblox.png" alt="Roblox Group">
+						<div class="link">Roblox Group</div>
+					</a>
+				</div>
+			</section>
+
+			<section class="card" id="mirrors">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">MIRRORS</p>
+				<h2>Other routes in</h2>
+				<div class="links">
+					<a href="https://noahisa.dev" target="_blank">
+						<span class="link-glyph">&#127760;</span>
+						<div class="link">
+							Clearnet
+							<span class="link-sub">noahisa.dev</span>
+
+							<!-- noahisa.dev
+
+							-----BEGIN PGP SIGNATURE-----
+
+							iHUEABYKAB0WIQStM4rAU/4mDXdoUB882W7oxulYEAUCaoXrQAAKCRA82W7oxulY
+							EGaxAP9xMAL4BDFvl0QrnaavFuE91Bndw1Z61kaTXiI/m/PESwD+OI7R0/RdHUWp
+							ocQiEkxDL2pYN0M0oOLbTWNbIShUpA8=
+							=HdCI
+							-----END PGP SIGNATURE----- -->
+
+						</div>
+					</a>
+					<a href="http://noahdevq2oi2qt7o3b52x4rtfixj4nu4ccm3bmc46aykjtxi322mt2yd.onion" target="_blank">
+						<span class="link-glyph">&#128274;</span>
+						<div class="link">
+							Tor mirror
+							<span class="link-sub">noahdevq2oi2qt7o3b52x4rtfixj4nu4ccm3bmc46aykjtxi322mt2yd.onion</span>
+						</div>
+
+						<!-- noahdevq2oi2qt7o3b52x4rtfixj4nu4ccm3bmc46aykjtxi322mt2yd.onion
+
+						-----BEGIN PGP SIGNATURE-----
+
+						iHUEABYKAB0WIQStM4rAU/4mDXdoUB882W7oxulYEAUCaoXrKgAKCRA82W7oxulY
+						EMihAP9PD+RGqgrqUMnIqEcCdtjK3IObEsu5/+2hLOJ89cvqnwEA9UXfhvPCSG4I
+						ap2C6xsB7JwZV0BDVmlJ0Shz2D6jjww=
+						=2rz3
+						-----END PGP SIGNATURE----- -->
+
+					</a>
+				</div>
+			</section>
+
+			<section class="card" id="donate">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">DONATE</p>
+				<h2>Send a tip</h2>
+				<div class="mono-list">
+					<!-- <div class="mono-row">
+						<span class="mono-label">BTC</span>
+						<code class="mono-value">bc1qXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code>
+						<button class="copy-btn" onclick="copyMono(this)" aria-label="Copy BTC address">&#10697;</button>
+					</div>
+					<div class="mono-row">
+						<span class="mono-label">ETH</span>
+						<code class="mono-value">0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code>
+						<button class="copy-btn" onclick="copyMono(this)" aria-label="Copy ETH address">&#10697;</button>
+					</div> -->
+					<div class="mono-row">
+						<span class="mono-label">XMR</span>
+						<code class="mono-value">42hNHBtypCbGqJ7AiXzFCU2ZFf2eLRBc63Vc8wb8M8WGEZJCN82rpJXQNdyUirAQeVUnWFwyxP8WSP4jtzmEPgyjFWKyAXM</code>
+						<button class="copy-btn" onclick="copyMono(this)" aria-label="Copy XMR address">&#10697;</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="card" id="keys">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">KEYS</p>
+				<h2>Verify it's me</h2>
+				<div class="mono-list">
+					<div class="mono-row mono-row-wrap">
+						<span class="mono-label">PGP</span>
+						<code class="mono-value">AD33 8AC0 53FE 260D 7768&nbsp;&nbsp;501F 3CD9 6EE8 C6E9 5810</code>
+						<button class="copy-btn" onclick="copyMono(this)" aria-label="Copy PGP fingerprint">&#10697;</button>
+					</div>
+				</div>
+				<a class="key-download" href="assets/keys/pubkey.asc" download>Download public key (.asc)</a>
+			</section>
+
+			<!-- <section class="card card-wide" id="projects">
+				<span class="corner-flake" aria-hidden="true">&#10052;</span>
+				<p class="eyebrow">PROJECTS</p>
+				<h2>What I'm building</h2>
+				<div class="project-grid">
+					<a class="project-tile" href="#" target="_blank">
+						<div class="project-thumb">
+							<img src="assets/images/projects/example.jpg" alt=""
+								onerror="this.parentElement.classList.add('thumb-fallback'); this.remove()">
+						</div>
+						<div class="project-info">
+							<h3>Frostbite Arena <span class="tag">example</span></h3>
+							<p>A short one-line pitch for the project goes here &mdash; swap this whole tile for your real one.</p>
+						</div>
+					</a>
+				</div>
+				<p class="body-text muted project-note">More coming soon &mdash; copy the tile above for each new project.</p>
+			</section> -->
 		</div>
 
 		<div class="contact">
-			<div class="contact-box">
-				✉️ contact@noahisa.dev
-			</div>
+			<a href="mailto:noahisadev@proton.me" class="contact-box">
+				<span class="contact-icon">&#9993;</span> noahisadev@proton.me
+			</a>
 		</div>
-	</div>
+	</main>
+
+	<script src="copy.js" defer></script>
 </body>
 </html>

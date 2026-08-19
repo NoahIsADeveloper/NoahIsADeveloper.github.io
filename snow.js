@@ -6,12 +6,9 @@ let particles = [];
 class Particle {
 	constructor() {
 		this.reset();
-		
-		// Teleport it to a random location after it first loads
 		this.spawn();
 	}
 
-	// Used to reset the particle after it goes offscreen
 	reset() {
 		this.x = Math.random() * -30;
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
@@ -19,25 +16,20 @@ class Particle {
 		this.width = this.height;
 		this.speed = Math.random() * 0.05;
 		this.angle = Math.random() * 30 + 10;
-		this.opacity = Math.random() * 0.8;
+		this.opacity = Math.random() * 0.2;
 	}
 
-	// Used to update the position of the particle every frame
 	update() {
-		// Adds movement speed based on screen height for bigger screens
 		let speedMultiplier = (canvas.width / 25000)
 
-		// Move in the direction the particle is pointing in
 		this.x += Math.cos((this.angle * Math.PI) / 180) * (this.speed + speedMultiplier);
 		this.y += Math.sin((this.angle * Math.PI) / 180) * (this.speed + speedMultiplier);
 
-		// Reset the particle if it goes too far to the right or too far down
 		if (this.isOffscreen()) {
 			this.reset();
 		}
 	}
 
-	// Used to render/draw the particle every frame
 	draw() {
 		ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
 		ctx.lineWidth = this.width;
@@ -50,33 +42,26 @@ class Particle {
 		ctx.stroke();
 	}
 
-	// Used to teleport the particle to a random location
 	spawn() {
 		this.x = Math.random() * canvas.width;
 		this.y = (Math.random() - 0.5) * canvas.height * 2;
 	}
 
-	// Used to check if the particle is offscreen
 	isOffscreen() {
 		return (this.x > canvas.width + this.width || this.y > canvas.height + this.height);
 	}
 }
 
-// Update the size of the canvas
 async function updateCanvasSize() {
-	// Cancer to make scrolling work
     canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
 	await new Promise(r => setTimeout(r, 50));
 	canvas.height = document.documentElement.scrollHeight;
 
-	// Remove useless particles when the window shrinks
-	// or add more particles when the window grow
 	createParticles();
 }
 
-// Used to create the particles (amount scales based on screen size)
 function createParticles() {
 	const targetParticles = Math.floor((canvas.width * canvas.height) / 3000);
 
@@ -84,7 +69,6 @@ function createParticles() {
 		particles.pop();
 	}
 
-	// Respawn offscreen particles after resize
 	particles.forEach((particle) => {
 		if (particle.isOffscreen()) {
 			particle.spawn();
@@ -96,7 +80,6 @@ function createParticles() {
 	}
 }
 
-// Loop to draw and update the particles
 function animate() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -108,16 +91,11 @@ function animate() {
 	requestAnimationFrame(animate);
 }
 
-// Updates the size of the canvas
 updateCanvasSize();
-
-// Creates the particles
 createParticles();
 
-// Start the loop
 animate();
 
-// Resize the canvas object
 window.addEventListener("resize", () => {
 	updateCanvasSize();
 });
